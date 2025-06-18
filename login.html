@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Subscription Login&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Calibri Light', Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #000000;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #FFFFFF;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>input, button {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Calibri Light', Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1 class="text-lg font-bold mb-4"&gt;Login to Access Subscription&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="block mb-1"&gt;UserID&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input id="user" type="text" class="border border-black p-1 w-full" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="block mb-1 mt-2"&gt;Password&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input id="password" type="password" class="border border-black p-1 w-full" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button id="loginBtn" class="bg-black text-white px-4 py-1 mt-2 rounded"&gt;Login&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p id="error" class="text-red-600 mt-1 hidden"&gt;Invalid credentials&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const users = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'user1', name: 'John Doe', email: 'john.doe@borelsigma.com', password: 'pass123' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'user2', name: 'Jane Smith', email: 'jane.smith@borelsigma.com', password: 'pass456' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'user3', name: 'Mike Brown', email: 'mike.brown@borelsigma.com', password: 'pass789' }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const subscriptions = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Hootsuite", login: "https://www.hootsuite.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Canva Pro", login: "https://www.canva.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "HubSpot", login: "https://app.hubspot.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "SEMrush", login: "https://www.semrush.com/login/" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "LinkedIn Sales Navigator", login: "https://www.linkedin.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Statista", login: "https://www.statista.com/login/" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "SurveyMonkey", login: "https://www.surveymonkey.com/user/sign-in/" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "AWS", login: "https://aws.amazon.com/console/" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Vercel", login: "https://vercel.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "GitHub Enterprise", login: "https://github.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Cloudflare", login: "https://dash.cloudflare.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Sentry", login: "https://sentry.io/auth/login/" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Auth0", login: "https://auth0.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Figma", login: "https://www.figma.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Postman", login: "https://identity.getpostman.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "WordPress.com (Business Plan)", login: "https://wordpress.com/log-in" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "React (via CDN)", login: "https://react.dev" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Flutter", login: "https://flutter.dev" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "MarketResearch.com", login: "https://www.marketresearch.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Business Market Insights", login: "https://www.businessmarketinsights.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Tableau (Salesforce)", login: "https://www.tableau.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "MATLAB &amp; Simulink (MathWorks)", login: "https://www.mathworks.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Abaqus FEA (Dassault Systèmes)", login: "https://www.3ds.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "ANSYS Fluent (ANSYS)", login: "https://account.ansys.com" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "COMSOL Multiphysics", login: "https://www.comsol.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "IBM Quantum Experience (IBM)", login: "https://quantum-computing.ibm.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Python (NumPy, SciPy, Pandas)", login: "https://www.python.org" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Julia", login: "https://julialang.org" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Mathematica (Wolfram)", login: "https://account.wolfram.com/login" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "Google Analytics 360", login: "https://analytics.google.com" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ subscription: "ClickUp", login: "https://app.clickup.com/login" }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('loginBtn').addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const userId = document.getElementById('user').value;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const password = document.getElementById('password').value;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const error = document.getElementById('error');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const user = users.find(u =&gt; u.id === userId &amp;&amp; u.password === password);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (user) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const urlParams = new URLSearchParams(window.location.search);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const subscription = urlParams.get('sub');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const sub = subscriptions.find(s =&gt; s.subscription === subscription);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (sub) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>window.location.href = sub.login;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>error.textContent = 'Invalid subscription';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>error.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>error.textContent = 'Invalid credentials';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>error.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>

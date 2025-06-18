@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Nuclear Consulting Subscriptions&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Calibri Light', Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #000000;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #FFFFFF;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>table {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-collapse: collapse;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>th, td {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #000000;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>th {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #000000;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #FFFFFF;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>a {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #000000;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: underline;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>a:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>canvas {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 400px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 20px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>select {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Calibri Light', Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="root"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script type="text/babel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const { useState, useEffect } = React;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const users = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'user1', name: 'John Doe', email: 'john.doe@borelsigma.com', password: 'pass123' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'user2', name: 'Jane Smith', email: 'jane.smith@borelsigma.com', password: 'pass456' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: 'user3', name: 'Mike Brown', email: 'mike.brown@borelsigma.com', password: 'pass789' }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const subscriptions = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "1.1", system: "Marketing - Social Media", subscription: "Hootsuite", purpose: "Social media management.", applications: "Post Scheduling, Social Listening", pricing: "$99 (flat rate)", login: "https://www.hootsuite.com/login", teams: "Marketing", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "1.1.1", system: "Marketing - Social Media", subscription: "Canva Pro", purpose: "Visual content creation.", applications: "Templates, Infographics", pricing: "$12.99", login: "https://www.canva.com/login", teams: "Marketing", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "1.2", system: "Marketing - CRM &amp; Automation", subscription: "HubSpot", purpose: "CRM and marketing automation.", applications: "CRM, Email Campaigns", pricing: "$15/seat", login: "https://app.hubspot.com/login", teams: "Marketing", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "1.3", system: "Marketing - SEO &amp; Analytics", subscription: "SEMrush", purpose: "SEO and content marketing.", applications: "Keyword Research, Site Audit", pricing: "$129.95", login: "https://www.semrush.com/login/", teams: "Marketing", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "1.4", system: "Marketing - Networking", subscription: "LinkedIn Sales Navigator", purpose: "Networking with decision-makers.", applications: "Lead Search, InMail", pricing: "$99.99", login: "https://www.linkedin.com/login", teams: "Marketing", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "1.5", system: "Marketing - Market Research", subscription: "Statista", purpose: "Market research with 1M+ statistics.", applications: "Market Reports, Infographics", pricing: "$199 (flat rate)", login: "https://www.statista.com/login/", teams: "Marketing, Business Research", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "1.6", system: "Marketing - Surveys", subscription: "SurveyMonkey", purpose: "Surveys for feedback.", applications: "Survey Builder, Analytics", pricing: "$25", login: "https://www.surveymonkey.com/user/sign-in/", teams: "Marketing, Business Research", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "2.1", system: "Web-Devops - Cloud &amp; Hosting", subscription: "AWS", purpose: "Cloud hosting for secure websites.", applications: "EC2, S3, Lambda", pricing: "Pay-as-you-go", login: "https://aws.amazon.com/console/", teams: "Web Development, Web/Mobile Research", requirements: "16GB RAM, 4-core CPU, macOS 11+/Windows 10+", buyout: "https://www.dell.com ($1,099)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "2.1", system: "Web-Devops - Cloud &amp; Hosting", subscription: "Vercel", purpose: "Deployment for web apps.", applications: "Next.js, Serverless Functions", pricing: "$20", login: "https://vercel.com/login", teams: "Web Development, Web/Mobile Research", requirements: "8GB RAM, 4-core CPU, macOS 11+/Windows 10+", buyout: "https://www.apple.com ($999)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "2.2", system: "Web-Devops - Version Control", subscription: "GitHub Enterprise", purpose: "Version control and CI/CD.", applications: "Git, GitHub Actions", pricing: "$21", login: "https://github.com/login", teams: "Web Development, Web/Mobile Research", requirements: "16GB RAM, 4-core CPU, macOS 11+/Windows 10+", buyout: "https://www.dell.com ($1,099)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "2.3", system: "Web-Devops - Security &amp; Monitoring", subscription: "Cloudflare", purpose: "CDN and web security.", applications: "CDN, WAF, Workers", pricing: "$20 (flat rate)", login: "https://dash.cloudflare.com/login", teams: "Web Development", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "2.3", system: "Web-Devops - Security &amp; Monitoring", subscription: "Sentry", purpose: "Error tracking for web apps.", applications: "Error Monitoring, Performance Insights", pricing: "$26 (up to 5 users)", login: "https://sentry.io/auth/login/", teams: "Web Development", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "2.3", system: "Web-Devops - Security &amp; Monitoring", subscription: "Auth0", purpose: "Secure authentication.", applications: "SSO, MFA, OAuth", pricing: "$23", login: "https://auth0.com/login", teams: "Web Development", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "2.4", system: "Web-Devops - Design &amp; Development", subscription: "Figma", purpose: "UI/UX design for visualizations.", applications: "Figma Design, FigJam", pricing: "$12", login: "https://www.figma.com/login", teams: "Web Development, Web/Mobile Research", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "2.4", system: "Web-Devops - Design &amp; Development", subscription: "Postman", purpose: "API development.", applications: "API Client, Mock Servers", pricing: "$12", login: "https://identity.getpostman.com/login", teams: "Web Development, Web/Mobile Research", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "2.4", system: "Web-Devops - Design &amp; Development", subscription: "WordPress.com (Business Plan)", purpose: "CMS for SEO-optimized websites.", applications: "WordPress CMS, Plugins", pricing: "$25 (flat rate)", login: "https://wordpress.com/log-in", teams: "Web Development", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "2.4", system: "Web-Devops - Design &amp; Development", subscription: "React (via CDN)", purpose: "Framework for dynamic web apps.", applications: "React, JSX, Tailwind CSS", pricing: "Free", login: "https://react.dev", teams: "Web Development, Web/Mobile Research", requirements: "8GB RAM, 4-core CPU, macOS 11+/Windows 10+", buyout: "https://www.apple.com ($999)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "2.4", system: "Web-Devops - Design &amp; Development", subscription: "Flutter", purpose: "Cross-platform framework.", applications: "Dart, Flutter Widgets", pricing: "Free", login: "https://flutter.dev", teams: "Web Development, Web/Mobile Research", requirements: "8GB RAM, 4-core CPU, macOS 11+/Windows 10+", buyout: "https://www.apple.com ($999)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "3.1", system: "Business Research - Market Analysis", subscription: "MarketResearch.com", purpose: "1M+ reports on nuclear technology.", applications: "Industry Reports, Data Downloads", pricing: "Custom pricing", login: "https://www.marketresearch.com/login", teams: "Business Research, Marketing", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "3.1", system: "Business Research - Market Analysis", subscription: "Business Market Insights", purpose: "Syndicated research on nuclear market.", applications: "Market Analysis, Forecasts", pricing: "Custom pricing", login: "https://www.businessmarketinsights.com/login", teams: "Business Research, Marketing", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "3.2", system: "Business Research - Data Visualization", subscription: "Tableau (Salesforce)", purpose: "Data visualization for trends.", applications: "Dashboards, Interactive Charts", pricing: "Custom pricing", login: "https://www.tableau.com/login", teams: "Business Research, Marketing", requirements: "16GB RAM, 4-core CPU, macOS 11+/Windows 10+", buyout: "https://www.dell.com ($1,099)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "4.1", system: "Nuclear Physics - Simulations", subscription: "MATLAB &amp; Simulink (MathWorks)", purpose: "Modeling neutron kinetics.", applications: "MATLAB, Simulink", pricing: "Custom pricing", login: "https://www.mathworks.com/login", teams: "Business Research, Nuclear Physics", requirements: "16GB RAM, 4-core CPU, macOS 11+/Windows 10+", buyout: "https://www.dell.com ($1,099)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "4.1", system: "Nuclear Physics - Simulations", subscription: "Abaqus FEA (Dassault Systèmes)", purpose: "Finite Element Analysis.", applications: "Abaqus/CAE, SIMULIA", pricing: "Custom pricing", login: "https://www.3ds.com/login", teams: "Business Research, Nuclear Physics", requirements: "32GB RAM, 8-core CPU, NVIDIA GPU, macOS 12+/Windows 10+", buyout: "https://www.hp.com ($1,299)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "4.1", system: "Nuclear Physics - Simulations", subscription: "ANSYS Fluent (ANSYS)", purpose: "CFD for thermal-hydraulic coupling.", applications: "Fluent, ANSYS Workbench", pricing: "Custom pricing", login: "https://account.ansys.com", teams: "Business Research, Nuclear Physics", requirements: "32GB RAM, 8-core CPU, NVIDIA GPU, macOS 12+/Windows 10+", buyout: "https://www.hp.com ($1,299)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "4.1", system: "Nuclear Physics - Simulations", subscription: "COMSOL Multiphysics", purpose: "Multi-physics simulation.", applications: "COMSOL Desktop, Solvers", pricing: "Custom pricing", login: "https://www.comsol.com/login", teams: "Business Research, Nuclear Physics", requirements: "32GB RAM, 8-core CPU, NVIDIA GPU, macOS 12+/Windows 10+", buyout: "https://www.hp.com ($1,299)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "4.2", system: "Nuclear Physics - Quantum Computing", subscription: "IBM Quantum Experience (IBM)", purpose: "Quantum computing for QCD corrections.", applications: "Qiskit, Quantum Circuits", pricing: "Custom pricing", login: "https://quantum-computing.ibm.com/login", teams: "Business Research, Nuclear Physics, Computational Research", requirements: "8GB RAM, 4-core CPU, macOS 11+/Windows 10+", buyout: "https://www.apple.com ($999)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "5.1", system: "Computational Research - Programming", subscription: "Python (NumPy, SciPy, Pandas)", purpose: "Simulations, data analysis.", applications: "NumPy, SciPy, Pandas", pricing: "Free", login: "https://www.python.org", teams: "Nuclear Physics, Computational Research, Web Development", requirements: "8GB RAM, 4-core CPU, macOS 11+/Windows 10+", buyout: "https://www.apple.com ($999)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "5.1", system: "Computational Research - Programming", subscription: "Julia", purpose: "High-performance computing.", applications: "DataFrames.jl, DifferentialEquations.jl", pricing: "Free", login: "https://julialang.org", teams: "Nuclear Physics, Computational Research", requirements: "16GB RAM, 4-core CPU, macOS 11+/Windows 10+", buyout: "https://www.dell.com ($1,099)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "5.2", system: "Computational Research - Symbolic Computing", subscription: "Mathematica (Wolfram)", purpose: "Symbolic computations.", applications: "Wolfram Language, Visualization", pricing: "Custom pricing", login: "https://account.wolfram.com/login", teams: "Nuclear Physics, Computational Research", requirements: "16GB RAM, 4-core CPU, macOS 11+/Windows 10+", buyout: "https://www.dell.com ($1,099)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "6.1", system: "Web/Mobile Research - Analytics", subscription: "Google Analytics 360", purpose: "Web analytics for user behavior.", applications: "Real-Time Reporting, Funnel Analysis", pricing: "Custom pricing", login: "https://analytics.google.com", teams: "Web Development", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ id: "7.1", system: "Project Management", subscription: "ClickUp", purpose: "Work tracking, login monitoring.", applications: "Task Management, Automations", pricing: "$7", login: "https://app.clickup.com/login", teams: "All Teams", requirements: "8GB RAM, 2-core CPU, macOS 10+/Windows 10+", buyout: "https://www.lenovo.com ($599)" }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const sendEmail = (to, subscription, userId, password) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const loginUrl = `login.html?sub=${encodeURIComponent(subscription)}&amp;user=${userId}`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>console.log(`Email sent from corporate@borelsigma.com to ${to}:`);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>console.log(`Subject: Access Granted for ${subscription}`);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>console.log(`Body: Your access to ${subscription} has been granted. UserID: ${userId}, Password: ${password}. Login here: ${window.location.origin}/${loginUrl}`);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const App = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const [deployedStatus, setDeployedStatus] = useState(subscriptions.reduce((acc, sub) =&gt; ({ ...acc, [sub.subscription]: false }), {}));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const [assignedUsers, setAssignedUsers] = useState(subscriptions.reduce((acc, sub) =&gt; ({ ...acc, [sub.subscription]: '' }), {}));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const [ceoApproved, setCeoApproved] = useState(false);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const [chartInstance, setChartInstance] = useState(null);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const updateChart = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const ctx = document.getElementById('subscriptionChart').getContext('2d');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (chartInstance) chartInstance.destroy();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const deployedCounts = {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Marketing: 0,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>'Web-Devops': 0,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>'Business Research': 0,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>'Nuclear Physics': 0,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>'Computational Research': 0,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>'Web/Mobile Research': 0,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>'Project Management': 0</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>subscriptions.forEach(sub =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (deployedStatus[sub.subscription]) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (sub.teams.includes('Marketing')) deployedCounts.Marketing++;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (sub.teams.includes('Web Development')) deployedCounts['Web-Devops']++;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (sub.teams.includes('Business Research')) deployedCounts['Business Research']++;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (sub.teams.includes('Nuclear Physics')) deployedCounts['Nuclear Physics']++;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (sub.teams.includes('Computational Research')) deployedCounts['Computational Research']++;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (sub.teams.includes('Web/Mobile Research')) deployedCounts['Web/Mobile Research']++;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (sub.teams.includes('All Teams')) deployedCounts['Project Management']++;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const newChart = new Chart(ctx, {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>type: 'pie',</p>
+<p class="p1"><span class="Apple-converted-space">          </span>data: {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>labels: Object.keys(deployedCounts),</p>
+<p class="p1"><span class="Apple-converted-space">            </span>datasets: [{</p>
+<p class="p1"><span class="Apple-converted-space">              </span>label: 'Deployed Subscriptions by Branch',</p>
+<p class="p1"><span class="Apple-converted-space">              </span>data: Object.values(deployedCounts),</p>
+<p class="p1"><span class="Apple-converted-space">              </span>backgroundColor: ['#000000', '#333333', '#666666', '#999999', '#CCCCCC', '#E6E6E6', '#F5F5F5'],</p>
+<p class="p1"><span class="Apple-converted-space">              </span>borderColor: ['#000000', '#333333', '#666666', '#999999', '#CCCCCC', '#E6E6E6', '#F5F5F5'],</p>
+<p class="p1"><span class="Apple-converted-space">              </span>borderWidth: 1</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}]</p>
+<p class="p1"><span class="Apple-converted-space">          </span>},</p>
+<p class="p1"><span class="Apple-converted-space">          </span>options: {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>responsive: true,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>plugins: {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>legend: { position: 'top', labels: { font: { size: 10, family: 'Calibri Light, Arial' } } },</p>
+<p class="p1"><span class="Apple-converted-space">              </span>title: { display: true, text: 'Deployed Subscriptions by Branch', font: { size: 12, family: 'Calibri Light, Arial' } }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setChartInstance(newChart);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>useEffect(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>updateChart();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (chartInstance) chartInstance.destroy();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}, [deployedStatus]);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const handleUserAssignment = (subscription, userId) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setAssignedUsers(prev =&gt; ({ ...prev, [subscription]: userId }));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const toggleDeployment = (subscription) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setDeployedStatus(prev =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const newStatus = { ...prev, [subscription]: !prev[subscription] };</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (newStatus[subscription]) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const userId = assignedUsers[subscription];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (userId) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>const user = users.find(u =&gt; u.id === userId);</p>
+<p class="p1"><span class="Apple-converted-space">              </span>if (user) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>sendEmail(user.email, subscription, user.id, user.password);</p>
+<p class="p1"><span class="Apple-converted-space">              </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>return newStatus;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="container mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h1 className="text-lg font-bold mb-4"&gt;Nuclear Consulting Subscriptions&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button</p>
+<p class="p1"><span class="Apple-converted-space">              </span>className="bg-black text-white px-4 py-2 rounded"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>onClick={() =&gt; setCeoApproved(!ceoApproved)}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{ceoApproved ? 'Revoke CEO Approval' : 'CEO Approve'}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ceoApproved &amp;&amp; (</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;a</p>
+<p class="p1"><span class="Apple-converted-space">                </span>href="https://app.hubspot.com/login"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>className="ml-4 inline-block bg-black text-white px-4 py-2 rounded"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Access HubSpot CRM</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>)}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;canvas id="subscriptionChart" className="mb-4"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;table className="table-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;System ID&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;System&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;Subscription&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;Purpose&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;Applications&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;Pricing Per User (Monthly)&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;Login Link&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;Relevant Team(s)&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;System Requirements&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;Cheapest Buyout Links&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;Assign User&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;Deploy&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{subscriptions.map(sub =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr key={sub.id}&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;td&gt;{sub.id}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;td&gt;{sub.system}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;td&gt;{sub.subscription}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;td&gt;{sub.purpose}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;td&gt;{sub.applications}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;td&gt;{sub.pricing}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;td&gt;&lt;a href={sub.login}&gt;{sub.login}&lt;/a&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;td&gt;{sub.teams}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;td&gt;{sub.requirements}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;td&gt;&lt;a href={sub.buyout}&gt;{sub.buyout}&lt;/a&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>value={assignedUsers[sub.subscription]}</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>onChange={(e) =&gt; handleUserAssignment(sub.subscription, e.target.value)}</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>disabled={!ceoApproved}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;option value=""&gt;Select User&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>{users.map(user =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option key={user.id} value={user.id}&gt;{user.name}&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>type="checkbox"</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>checked={deployedStatus[sub.subscription]}</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>onChange={() =&gt; toggleDeployment(sub.subscription)}</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>disabled={!ceoApproved || !assignedUsers[sub.subscription]}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p className="mt-4"&gt;Source code: &lt;a href="https://github.com/muskansharma/nuclear-subscriptions"&gt;GitHub Repository&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.20.15/babel.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
