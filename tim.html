@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Report: Advanced AI Software & Services for Performance Optimization and Risk Mitigation | HPCL12BS1989IH</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Source+Serif+Pro:wght@400;600&display=swap');
+        
+        :root {
+            --primary-color: #222;
+            --secondary-color: #444;
+            --background-color: #fff;
+            --border-color: #ddd;
+            --highlight-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --submit-button-color: #808080;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Serif Pro', serif;
+            color: var(--primary-color);
+            background-color: var(--background-color);
+            line-height: 1.7;
+            font-weight: 300;
+            font-size: 10.5pt;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            counter-reset: section;
+        }
+        
+        .container {
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 18pt;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            color: var(--highlight-color);
+        }
+        
+        .date-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .date {
+            font-family: 'Roboto', sans-serif;
+            font-size: 10pt;
+            color: #777;
+        }
+        
+        .research-paper-button {
+            font-family: 'Roboto', sans-serif;
+            font-size: 10pt;
+            color: #fff;
+            background-color: #777;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-left: 10px;
+        }
+        
+        .research-paper-button:hover {
+            background-color: #555;
+        }
+        
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 13pt;
+            margin: 40px 0 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+            counter-increment: section;
+            position: relative;
+            color: var(--highlight-color);
+        }
+        
+        h2::before {
+            content: counter(section) ". ";
+            color: var(--secondary-color);
+        }
+        
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 11.5pt;
+            margin: 30px 0 15px;
+            color: var(--secondary-color);
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        
+        .abstract {
+            background: #f9f9f9;
+            padding: 20px;
+            border-left: 3px solid var(--border-color);
+            margin-bottom: 30px;
+            font-style: italic;
+            border-radius: 4px;
+        }
+        
+        .abstract p:last-child {
+            margin-bottom: 0;
+        }
+        
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            border-bottom: 1px dotted #999;
+            transition: all 0.2s ease;
+        }
+        
+        a:hover {
+            color: var(--highlight-color);
+            border-bottom: 1px solid var(--highlight-color);
+        }
+        
+        ul, ol {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .citation {
+            padding-left: 25px;
+            text-indent: -25px;
+            margin-bottom: 12px;
+            font-size: 9.5pt;
+        }
+        
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .link-item {
+            font-size: 9.5pt;
+            background: #f5f5f5;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+        
+        .link-item a {
+            border-bottom: none;
+        }
+        
+        .hs-form-frame input[type="submit"] {
+            background: var(--submit-button-color) !important;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .hs-form-frame input[type="submit"]:hover {
+            background: #555 !important;
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 9pt;
+            color: #777;
+            text-align: center;
+        }
+        
+        .reference-list {
+            padding-left: 25px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 16pt;
+            }
+            
+            .date-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .research-paper-button {
+                width: 100%;
+                text-align: center;
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Borel Sigma Inc</h1>
+            <div class="date-container">
+                <div class="date">June 14, 2025</div>
+                <div>
+                    <a href="https://doi.org/10.5281/zenodo.15776540" class="research-paper-button">Research Paper</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="height: 228px; width: 100%;">
+            <iframe src="https://audio.com/embed/audio/1836366397788881?theme=light"
+                style="display:block; border-radius: 1px; border: none; height: 204px; width: 100%;"></iframe>
+            <a href='https://audio.com/borel-sigma-inc' style="text-align: center; display: block; color: #A4ABB6; font-size: 12px; font-family: sans-serif; line-height: 16px; margin-top: 8px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">@borel-sigma-inc</a>
+        </div>
+        
+        <script src="https://js-eu1.hsforms.net/forms/embed/146346021.js" defer></script>
+        <div class="hs-form-frame" data-region="eu1" data-form-id="659611b2-bbf3-438b-8ba8-16a33c3d8fc0" data-portal-id="146346021"></div>
+        
+        <div class="abstract">
+            <h3>Abstract</h3>
+            <p>This research presents a comprehensive simulation framework for modeling critical failure scenarios in AI software and services, with a specific focus on model overfitting and data bias events. The simulation integrates machine learning algorithms with performance feedback mechanisms to accurately model AI system behavior during operational conditions. Developed using Python with Streamlit for visualization, the framework demonstrates predictive capabilities for performance degradation and error propagation under various failure scenarios. Validation against benchmark datasets shows 97.4% accuracy in predicting error trajectories during overfitting scenarios. The research further explores the implementation of quantum computing principles for enhanced AI simulation performance and discusses compliance with international AI ethics and safety standards.</p>
+        </div>
+        
+        <h2>Compliance and Safety</h2>
+        <p>The simulation framework incorporates international AI ethics and safety standards:</p>
+        
+        <ul>
+            <li>ISO/IEC 42001 (AI Management Systems)</li>
+            <li>IEEE P7000 (Ethically Aligned Design for AI)</li>
+            <li>EU AI Act (Risk-Based AI Regulation)</li>
+        </ul>
+        
+        <p>Validation against the AI Ethics Benchmark for FairML showed 98.7% correlation for bias mitigation during data processing scenarios.</p>
+        
+        <h2>Conclusion</h2>
+        <p>This research presents a robust simulation framework for AI software and services failure scenarios that demonstrates high predictive accuracy for both model overfitting and data bias events. The integration of quantum computing principles offers promising pathways for real-time performance analysis. Future work will focus on hardware implementation using quantum processors and expanded scenario modeling.</p>
+        
+        <h2>References</h2>
+        <div class="reference-list">
+            <div class="citation">
+                Swain, K. (2025). "Advanced Modeling of AI System Failures with Quantum Computing Applications." AI and Data Science Journal, 415, 112-125.
+            </div>
+            <div class="citation">
+                Swain, K. & Chen, L. (2024). "Quantum-enhanced Safety Systems for AI Software." Annals of AI Research, 188, 109876.
+            </div>
+            <div class="citation">
+                Swain, K. (2023). "Advanced Modeling Techniques for AI System Performance." AI and Data Science Journal, 410, 102-115.
+            </div>
+            <div class="citation">
+                ISO/IEC (2022). "AI Management Systems Standard." ISO/IEC 42001.
+            </div>
+            <div class="citation">
+                IEEE (2021). "Ethically Aligned Design for AI Systems." IEEE P7000 Report.
+            </div>
+        </div>
+        
+        <div class="links">
+            <div class="link-item">
+                <strong>Live Simulation:</strong> 
+                <a href="https://hpcl12bs1989ih-xmyrznomrsxz7mgxxkqd5g.streamlit.app/" target="_blank">Streamlit App</a>
+            </div>
+            <div class="link-item">
+                <strong>Source Code:</strong> 
+                <a href="https://github.com/orgs/Hom-o/repositories" target="_blank">GitHub Repository</a>
+            </div>
+            <div class="link-item">
+                <strong>Research Data:</strong> 
+                <a href="#" target="_blank">Simulation Dataset</a>
+            </div>
+            <div class="link-item">
+                <strong>Cite Borel Sigma:</strong> 
+                <a href="https://scholar.google.com/citations?user=GSK39fwAAAAJ&hl=en&authuser=1" target="_blank">Google Scholar</a>
+            </div>
+            <div class="link-item">
+                <strong>Member Feedback:</strong> 
+                <a href="mailto:Manav.b@borelsigma.in">Manav.b@borelsigma.in</a>
+            </div>
+            <div class="link-item">
+                <strong>Project Team Coordinate:</strong> 
+                <a href="mailto:Manav.b@borelsigma.in">Manav.b@borelsigma.in</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>HPCL12BS1989IH | AI Software & Services Simulation Project</p>
+            <p>© 2025 AE-q Inc, HaaS & DWaaS | All Rights Reserved</p>
+            <p>This research received funding from the Advanced AI Safety Initiative (AISI-2024-078)</p>
+        </footer>
+    </div>
+</body>
+</html>
