@@ -1,3 +1,6 @@
 [submodule "Desktop/my-portfolio-site/plasma-research"]
 	path = Desktop/my-portfolio-site/plasma-research
 	url = https://github.com/zi-us/pla.git
+[submodule "Desktop/my-portfolio-site/pla"]
+	path = Desktop/my-portfolio-site/pla
+	url = https://github.com/zi-us/pla.git
